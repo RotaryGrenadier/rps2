@@ -2,14 +2,23 @@ function getComputerChoice(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 
 }
-const arr =  ['rock', 'paper', 'scissors'];
 
 function playerChoice(rps) {
     return rps = prompt("Rock, paper, scissor SHOOT!");
     
 }
 
-function playRound(playerSelection, computerSelection);
+let winner;
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == "rock" && computerSelection == "scissors") {
+         alert("You chose rock!! and the cpu did not!");
+        return winner = ("Rock beats Scissors!");
+    }
+    
+}
 
-console.log(playerChoice());
-console.log(getComputerChoice(arr));
+const arr =  ['rock', 'paper', 'scissors'];
+const arr2 = ["paper beats rock", "rock beats scissors", "scissors beat paper"];
+const playerSelection = playerChoice()
+const computerSelection = getComputerChoice(arr);
+console.log(playRound(playerSelection, computerSelection));
