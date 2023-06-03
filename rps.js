@@ -8,17 +8,61 @@ function playerChoice(rps) {
     
 }
 
-let winner;
+let winner = 0;
+let loser = 0;
+let tie;
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "scissors") {
          alert("You chose rock!! and the cpu did not!");
-        return winner = ("Rock beats Scissors!");
+         return winner = ("Rock beats Scissors!");
+   
+    }else if ( playerSelection == "scissors" && computerSelection == "paper") {
+        alert("You chose Scissors!! and the cpu did not!");
+        return winner = ("Scissors beat paper");
+   
+    }else if (playerSelection == "paper" && computerSelection == "rock") {
+        alert("Paper smothers rock! You beat Cpu");
+        return winner = ("See alert!");
+   
+    }else if (playerSelection == "paper" && computerSelection == "paper" || 
+    playerSelection == "rock" && computerSelection == "rock" ||
+    playerSelection == "scissors" && computerSelection == "scissors") {
+        return tie = ("BOTH CHOSE THE SAME! IT'S A TIE!");
     }
-    
 }
+
 
 const arr =  ['rock', 'paper', 'scissors'];
 const arr2 = ["paper beats rock", "rock beats scissors", "scissors beat paper"];
 const playerSelection = playerChoice()
 const computerSelection = getComputerChoice(arr);
-console.log(playRound(playerSelection, computerSelection));
+
+let score;
+function game() {
+    console.log(playRound());
+    if (winner < 5 && tie < 5) {
+        game()
+    }
+    return score;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
