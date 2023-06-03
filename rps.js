@@ -14,15 +14,12 @@ let tie;
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == "rock" && computerSelection == "scissors") {
-         alert("You chose rock!! and the cpu did not!");
          return winner = ("Rock beats Scissors!");
    
     }else if ( playerSelection == "scissors" && computerSelection == "paper") {
-        alert("You chose Scissors!! and the cpu did not!");
         return winner = ("Scissors beat paper");
    
     }else if (playerSelection == "paper" && computerSelection == "rock") {
-        alert("Paper smothers rock! You beat Cpu");
         return winner = ("See alert!");
    
     }else if (playerSelection == "paper" && computerSelection == "paper" || 
