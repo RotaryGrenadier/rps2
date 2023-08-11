@@ -1,48 +1,130 @@
-function getComputerChoice(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
+
+let computerScore = 0;
+let userScore = 0;
+let result;
+
+function getComputerChoice() {
+    let cpuChoice= Math.floor(Math.random() * arr.length);
+    return arr[cpuChoice]
 
 }
 
-function playerChoice(rps) {
-    return rps = prompt("Rock, paper, scissor SHOOT!");
+
+
+function playRound() {
+    let computerSelection = getComputerChoice();
+    let playerSelection = prompt("Rock, Paper 1Scissors!");
+   
+
+     if (playerSelection == "rock" && computerSelection == "scissors") { 
+        userScore ++
+        let result = "You win! You Adrienne(Rocky reference...)"
+         result += '\n'
+         result += " Your Score: " + userScore
+         result += '\n' 
+         result += " Computer Score: " + computerScore
+         return result
+       
+    }
     
-}
+    if (playerSelection == "scissors" && computerSelection == "paper") {
+        userScore ++
+        let result = "You won! Siz beats pape!"
+        result += '\n'
+        result += " Your Score: " + userScore
+        result += '\n' 
+        result += " Computer Score: " + computerScore
+        return result
+   
+    }
+    
+    if (playerSelection == "paper" && computerSelection == "rock") {
+        userScore ++
+        let result = "You won! Pape beats ROK!"
+        result += '\n'
+        result += " Your Score: " + userScore
+        result += '\n' 
+        result += " Computer Score: " + computerScore
+        return result
+    
+    
+    }
+    
+    if (playerSelection === computerSelection) {
+        let result = "Game was a dud!"
+        result += '\n'
+        result += " Your Score: " + userScore
+        result += '\n'
+        result += " Computer Score: " + computerScore
+        return result;
+    }
 
-let winner = 0;
-let loser = 0;
-let tie;
+    if (playerSelection == 'rock' && computerSelection == 'paper') {
+            computerScore++;
+            let result = "You Lose! Paper beats rock!"
+            result += '\n'
+            result += " Your Score: " + userScore
+            result += '\n'
+            result += " Computer Score: " + computerScore
+            return result;
+        }
+       
+        if (playerSelection == 'scissors' && computerSelection == 'rock') {
+            computerScore++;
+            let result = "You Lose! Rock beats scissors!";
+            result += '\n'
+            result += " Your Score: " + userScore
+            result += '\n'
+            result += " Computer Score: " + computerScore
+            return result;
+        }
+        if (playerSelection == 'paper' && computerSelection == 'scissors') {
+            computerScore++;
+            let result = "You Lose! Scissors beats paper!"
+            result += '\n'
+            result += " Your Score: " + userScore
+            result += '\n'
+            result += " Computer Score: " + computerScore
+            return result;
+    
 
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection == "rock" && computerSelection == "scissors") {
-         return winner = ("Rock beats Scissors!");
    
-    }else if ( playerSelection == "scissors" && computerSelection == "paper") {
-        return winner = ("Scissors beat paper");
-   
-    }else if (playerSelection == "paper" && computerSelection == "rock") {
-        return winner = ("See alert!");
-   
-    }else if (playerSelection == "paper" && computerSelection == "paper" || 
-    playerSelection == "rock" && computerSelection == "rock" ||
-    playerSelection == "scissors" && computerSelection == "scissors") {
-        return tie = ("BOTH CHOSE THE SAME! IT'S A TIE!");
     }
 }
 
 
 const arr =  ['rock', 'paper', 'scissors'];
-const arr2 = ["paper beats rock", "rock beats scissors", "scissors beat paper"];
-const playerSelection = playerChoice()
-const computerSelection = getComputerChoice(arr);
+const computerSelection = getComputerChoice();
 
-let score;
+function endGame() {
+    if (userScore > computerScore) {
+        console.log("I'll be dipped! You won!");
+    } else if (computerScore > userScore) {
+        console.log("Game Over Man! Game Over ");
+    }
+}
+
 function game() {
     console.log(playRound());
-    if (winner < 5 && tie < 5) {
-        game()
+    if(userScore < 5 && computerScore < 5){
+    	game();
     }
-    return score;
+    else{
+    	endGame();
+    }
 }
+
+game();
+
+
+    
+
+
+
+
+
+
+
 
 
 
